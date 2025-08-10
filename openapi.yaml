@@ -1,0 +1,69 @@
+openapi: 3.0.0
+info:
+  title: tianmiantech/WeFe
+  version: 1.0.0
+  description: tianmiantech/WeFe
+servers:
+- url: http://localhost:8080
+  description: Local development server
+paths:
+  /data_output_info/model_export:
+    all:
+      tags:
+      - ModelExportController
+      summary: download
+      description: 该代码实现了一个模型导出接口，接收jobId等参数，验证登录和参数后调用服务导出模型文件，设置响应头返回文件下载，异常时返回错误信息。
+      operationId: board-service_com.welab.wefe.board.service.api.data_output_info.ModelExportController#download
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+      deprecated: false
+  /**:
+    get:
+      tags:
+      - BaseController
+      summary: get
+      description: 这是一个Spring MVC控制器方法，处理所有GET请求。如果请求路径以/static/开头，返回对应的静态资源文件（如图片），否则转发到post方法处理。响应格式为JSON，字符集为UTF-8。
+      operationId: common-web_com.welab.wefe.common.web.controller.BaseController#get
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+      deprecated: false
+    post:
+      tags:
+      - BaseController
+      summary: post
+      description: 处理HTTP POST请求，支持普通和文件上传，返回JSON响应，记录耗时并清理线程变量。
+      operationId: common-web_com.welab.wefe.common.web.controller.BaseController#post
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+      deprecated: false
+  /download:
+    get:
+      tags:
+      - BaseController
+      summary: download
+      description: Spring Boot下载接口，设置无缓存响应头，返回文件流。
+      operationId: common-web_com.welab.wefe.common.web.controller.BaseController#download
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+      deprecated: false
+components: {}
