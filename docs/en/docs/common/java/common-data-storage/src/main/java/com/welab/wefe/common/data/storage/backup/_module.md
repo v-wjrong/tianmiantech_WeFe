@@ -15,12 +15,7 @@ None
 
 ### Package Internal Structure View
 
-```mermaid
-graph TD
-    backup
-```
-
-This flowchart illustrates the single-path structure in PATH2, with the endpoint being the backup directory. Since only one path entry is provided, the diagram contains a single node representing the final directory level for backup storage, without displaying further subdirectory or file relationships.
+None
 
 # File List
 

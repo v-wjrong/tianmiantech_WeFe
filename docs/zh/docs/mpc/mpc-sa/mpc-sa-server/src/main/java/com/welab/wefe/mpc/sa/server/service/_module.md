@@ -6,32 +6,22 @@
 | 编码语言 | .java |
 | 代码路径 | WeFe/mpc/mpc-sa/mpc-sa-server/src/main/java/com/welab/wefe/mpc/sa/server/service |
 | 包名 | docs.mpc.mpc-sa.mpc-sa-server.src.main.java.com.welab.wefe.mpc.sa.server.service |
-| 概述说明 | QueryResultService处理查询请求，提供两种handle方法，涉及缓存获取、加密计算和结果调整，返回处理结果和UUID。QueryDiffieHellmanKeyService处理密钥交换请求，生成随机密钥，进行加密计算并缓存，返回加密结果和UUID。 |
+| 概述说明 |  |
 
 # 说明
 
-## 概述  
-该模块核心职责是实现安全多方计算中的查询结果处理和Diffie-Hellman密钥交换功能，包含加密计算和缓存管理。接口规范包括两种查询结果处理方法（固定因子和自定义因子）以及密钥生成与加密接口。关键数据结构涉及DiffieHellman值列表、16进制参数p/g和UUID响应对象。外部依赖项主要为缓存系统（如CacheOperationFactory）。例如QueryResultService通过跳过当前索引项实现差分隐私，QueryDiffieHellmanKeyService使用1024位随机密钥确保安全性。
-
-## 主要业务场景  
-模块支持两种典型流程：查询结果处理类似事件总线模式，通过调整符号和随机种子累加结果；密钥交换流程则类似TLS握手，生成随机密钥并基于p/g参数进行加密。完整功能包括缓存读写、参数校验、加密运算和响应构建。例如处理查询时自动跳过当前索引，密钥交换时强制转换16进制数据。API类型涵盖结果查询（带因子参数）和密钥生成（需p/g参数）两类集成场景。
+None
 
 
 ### 包内部结构视图
 
-```mermaid
-graph TD
-    service --> QueryResultService.java
-    service --> QueryDiffieHellmanKeyService.java
-```
-
-该流程图展示了service文件夹下的两个Java服务类文件：QueryResultService.java和QueryDiffieHellmanKeyService.java。这两个文件都直接隶属于service目录，没有更深层的嵌套结构，形成了简单的平级关系。图中清晰呈现了服务层代码文件的组织方式，共包含1个父节点和2个子节点。
+None
 
 # 文件列表
 
 | 名称   | 类型  | 说明 |
 |-------|------|-------------|
-| [QueryResultService.java](QueryResultService.md) | file | QueryResultService处理查询请求，通过缓存获取数据，使用DiffieHellman加密和随机数调整结果，最后返回响应。支持乘法和减法操作。 |
-| [QueryDiffieHellmanKeyService.java](QueryDiffieHellmanKeyService.md) | file | 处理Diffie-Hellman密钥请求，生成随机密钥并加密，保存到缓存后返回响应。 |
+| [QueryResultService.java](QueryResultService.md) | file |  |
+| [QueryDiffieHellmanKeyService.java](QueryDiffieHellmanKeyService.md) | file |  |
 
 

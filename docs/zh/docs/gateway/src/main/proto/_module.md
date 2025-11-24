@@ -15,12 +15,7 @@ None
 
 ### 包内部结构视图
 
-```mermaid
-graph TD
-    proto
-```
-
-该流程图展示了WeFe网关项目中proto文件的存放位置。proto目录位于gateway模块的src/main路径下，用于存放协议缓冲区定义文件。这是一个典型的微服务架构中用于定义服务间通信协议的目录结构，层级简洁明了。
+None
 
 # 文件列表
 
